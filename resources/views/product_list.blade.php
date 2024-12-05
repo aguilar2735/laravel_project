@@ -35,7 +35,7 @@
 
                     <h3 class="text-xl font-semibold text-gray-900 truncate">{{ $product->name }}</h3>
                     <p class="text-sm text-gray-600 mt-2 truncate">{{ $product->description }}</p>
-                    <p class="text-lg font-bold text-indigo-600 mt-4">${{ number_format($product->price ?? 0, 2) }}</p>
+                    <p class="text-lg font-bold text-indigo-600 mt-4">₱{{ number_format($product->price ?? 0, 2) }}</p>
 
                     <!-- Add to Cart Form -->
                     <form action="{{ route('cart.add') }}" method="post" class="mt-6">

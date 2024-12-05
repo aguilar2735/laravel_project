@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
@@ -34,3 +35,7 @@ Route::post('/product_list', [ProductController::class, 'product_list'])->name('
 
 Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
 Route::get('/cart', [CartController::class, 'viewCart'])->name('cart');
+
+Route::get('checkout', [PaymentController::class, 'checkout'])->name('checkout');
+Route::get('payment-success', [PaymentController::class, 'paymentSuccess'])->name('payment.success');
+Route::get('payment-failed', [PaymentController::class, 'paymentFailed'])->name('payment.failed');
